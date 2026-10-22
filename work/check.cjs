@@ -1,0 +1,1 @@
+const fs=require('fs'),vm=require('vm');const h=fs.readFileSync('outputs/index.html','utf8');new vm.Script(h.match(/<script>([\s\S]*?)<\/script>/)[1]);console.log('JavaScript syntax valid');fetch('http://127.0.0.1:4173').then(r=>console.log('Preview HTTP status: '+r.status));

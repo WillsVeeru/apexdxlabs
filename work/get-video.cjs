@@ -1,0 +1,1 @@
+const fs=require('fs');(async()=>{const u='https://www.pexels.com/video/medical-practitioners-looking-at-the-sample-specimen-while-in-the-laboratory-8381593/';const r=await fetch(u);const t=await r.text();fs.writeFileSync('work/pexels.html',t);console.log(r.status);console.log([...new Set(t.match(/https[^"<>\s]+\.mp4[^"<>\s]*/g))].slice(0,8));})();

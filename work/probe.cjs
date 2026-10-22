@@ -1,0 +1,1 @@
+(async()=>{for(const id of [8381593,9373403,6036686]){for(const variant of ['hd_1080_1920_25fps','hd_1920_1080_25fps','hd_1920_1080_30fps','hd_1080_1920_30fps']){const u=`https://videos.pexels.com/video-files/${id}/${id}-${variant}.mp4`;const r=await fetch(u,{method:'HEAD'});console.log(id,variant,r.status);if(r.ok)break;}}})();

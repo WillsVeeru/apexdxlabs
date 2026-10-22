@@ -1,0 +1,1 @@
+const fs=require('fs');const file='outputs/index.html';let html=fs.readFileSync(file,'utf8');const block=/<div class="about-accreditation wrap">[\s\S]*?<\/p><\/div>/;if(!block.test(html))throw Error('Accreditations block not found');html=html.replace(block,'');fs.writeFileSync(file,html);console.log('Removed About section Accreditations block.');

@@ -1,0 +1,8 @@
+const fs=require('fs');const file='outputs/index.html';let h=fs.readFileSync(file,'utf8');const section=h.match(/<section class="detail-section reveal" id="services">[\s\S]*?<\/section>/);if(!section)throw Error('Diagnostic Services section not found');const images=[['uti-testing.jpg','Laboratory specimen analysis for UTI testing'],['nail-testing.jpg','Microscope used for pathogen analysis'],['respiratory-testing.jpg','Nasal swab specimen collection for respiratory testing']];let i=0;const updated=section[0].replace(/<div class="service-visual">/g,()=>{const [src,alt]=images[i++];if(!fs.existsSync('outputs/'+src))throw Error('Missing '+src);return `<div class="service-visual service-photo"><img src="${src}" alt="${alt}" loading="lazy" decoding="async">`});if(i!==3)throw Error('Expected three image panels');h=h.replace(section[0],updated);h=h.replace('</style>',`
+/* Diagnostic Services photography */
+.service-photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s var(--ease)}
+.service-photo:before{background:linear-gradient(180deg,rgba(13,13,12,.38),rgba(13,13,12,.04) 40%,rgba(13,13,12,.72));z-index:-1}
+.service-photo .service-orbit{display:none}.service-photo:hover>img{transform:scale(1.035)}
+.service-photo .service-visual-label{color:var(--gold-light)}.service-photo .service-visual-spec span{background:rgba(13,13,12,.5);color:var(--on-dark);border-color:rgba(255,255,255,.25)}.service-photo .service-visual-number{color:rgba(255,255,255,.5)}
+@media(prefers-reduced-motion:reduce){.service-photo>img{transition:none}}
+</style>`);fs.writeFileSync(file,h);console.log('Updated all three Diagnostic Services image panels.');
