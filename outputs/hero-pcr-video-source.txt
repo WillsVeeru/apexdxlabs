@@ -1,0 +1,6 @@
+Hero background: CDC OneLab REACH — Basic Molecular Biology: PCR and Real-Time PCR, Fluorescent Detection.
+Source: https://reach.cdc.gov/all/job-aids
+Video: https://reach.cdc.gov/sites/default/files/job-aid-lowrez-videos/Molecular_Fluorescent_Detection_lowres.mp4
+Illustrative PCR animation, not footage of Apex DX Labs.
+
+Current hero: pcr-testing-clean.mp4 — silent 35-second excerpt, 00:45–01:20, showing live-action PCR plate preparation; opening titles and results screens excluded.

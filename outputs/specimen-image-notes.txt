@@ -1,0 +1,6 @@
+Specimen imagery
+
+Cup: specimen-cup.png — AI-generated illustrative sterile screw-top urine collection cup on a neutral laboratory surface.
+Nail: specimen-nail-clippings.png — AI-generated illustrative nail clippings and keratin debris in a clear specimen dish on a neutral laboratory surface.
+Generated using the built-in image generation tool. Prompts requested photorealistic clinical still lifes, no text or branding, portrait composition, and accurate specimen objects; not procedural guides.
+Respiratory: respiratory-testing.jpg — Pexels nasal swab collection photo, https://www.pexels.com/photo/a-woman-getting-a-nasal-swab-test-6285406/
