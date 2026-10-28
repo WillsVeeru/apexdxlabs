@@ -1,0 +1,8 @@
+const fs=require('fs');const f='outputs/index.html';let h=fs.readFileSync(f,'utf8');const css=`
+/* Preserve hover interactions after sequential entrances */
+.js #testing .cards.sequence-visible>.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px #0d0d0c08;transition-delay:0ms}
+.js #for-providers .providers-grid.sequence-visible>.provider-card:hover{transform:translateY(-4px);background:#faf7f0;box-shadow:0 12px 28px rgba(13,13,12,.04);transition-delay:0ms}
+.js #about-us .value-grid.values-visible>.value-card:hover{transform:translateY(-5px);background:#e7d6a825;transition-delay:0ms}
+.js #testing .cards.sequence-settled>.card,.js #for-providers .providers-grid.sequence-settled>.provider-card,.js #about-us .value-grid.sequence-settled>.value-card{transition-delay:0ms}
+`;
+h=h.replace('</style>',css+'</style>');h=h.replace("entry.target.classList.add('sequence-visible');sequenceObserver.unobserve(entry.target)","entry.target.classList.add('sequence-visible');const sequenceGroup=entry.target;setTimeout(()=>sequenceGroup.classList.add('sequence-settled'),900+(sequenceGroup.children.length-1)*280);sequenceObserver.unobserve(entry.target)");h=h.replace("entry.target.classList.add('values-visible');valuesObserver.unobserve(entry.target)","entry.target.classList.add('values-visible');const valueGroup=entry.target;setTimeout(()=>valueGroup.classList.add('sequence-settled'),1460);valuesObserver.unobserve(entry.target)");fs.writeFileSync(f,h);new(require('vm').Script)(h.match(/<script>([\s\S]*?)<\/script>/)[1]);console.log('Fixed sequential reveal specificity overriding hover transforms; cleared entrance delays after reveals.');

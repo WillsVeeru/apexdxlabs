@@ -1,0 +1,1 @@
+const fs=require('fs');const h=fs.readFileSync('outputs/index.html','utf8');console.log([...h.matchAll(/.{0,100}(?:specimen|sample|hero-background|PCR).{0,150}/gi)].map(m=>m[0]).join('\n').slice(-18000));

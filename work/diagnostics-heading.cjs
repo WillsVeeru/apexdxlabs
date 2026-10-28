@@ -1,0 +1,1 @@
+const fs=require('fs');const file='outputs/index.html';let h=fs.readFileSync(file,'utf8');h=h.replace('<div class="section-label">Diagnostic Services</div>','');h=h.replace('Diagnostics that<br>earn<br><em>clinical trust.</em>','Diagnostics that<br>earn<br>clinical trust.');fs.writeFileSync(file,h);console.log('Removed Diagnostic Services eyebrow and headline italic markup.');

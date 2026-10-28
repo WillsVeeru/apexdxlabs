@@ -1,0 +1,1 @@
+const fs=require('fs');const file='outputs/index.html';let h=fs.readFileSync(file,'utf8');let count=0;h=h.replace(/(<article class="value-card">[\s\S]*?)<svg[\s\S]*?<\/svg>/g,(_,prefix)=>{count++;return prefix});if(count!==3)throw Error('Expected 3 value card icons, found '+count);fs.writeFileSync(file,h);console.log('Removed icons from all three What We Stand For cards.');

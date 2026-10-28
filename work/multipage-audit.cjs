@@ -1,0 +1,1 @@
+const fs=require('fs');const h=fs.readFileSync('outputs/index.html','utf8');console.log([...h.matchAll(/<section[^>]*>/g)].map(m=>m[0]).join('\n'));console.log(h.slice(h.indexOf('<header>'),h.indexOf('<main')));

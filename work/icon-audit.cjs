@@ -1,0 +1,1 @@
+const fs=require('fs');let h=fs.readFileSync('outputs/index.html','utf8');console.log([...h.matchAll(/<svg[\s\S]*?<\/svg>/g)].map(m=>m[0].slice(0,160)).join('\n'));console.log('arrow spans', [...h.matchAll(/<span[^>]*>[^<]*[↗←→][^<]*<\/span>/g)].length);

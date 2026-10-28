@@ -1,0 +1,1 @@
+const fs=require('fs');(async()=>{const r=await fetch('https://images.pexels.com/photos/6520138/pexels-photo-6520138.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85');if(!r.ok)throw Error('Collection cup download: '+r.status);fs.writeFileSync('outputs/sterile-collection-cup.jpg',Buffer.from(await r.arrayBuffer()));console.log('Collection cup photo saved.');})();

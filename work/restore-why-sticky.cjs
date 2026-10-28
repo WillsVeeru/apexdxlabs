@@ -1,0 +1,4 @@
+const fs=require('fs');const f='outputs/index.html';let h=fs.readFileSync(f,'utf8');console.log('Why section:',h.match(/<section class="section why reveal">[\s\S]*?<\/section>/)?.[0].slice(0,450));console.log('Sticky override found:',h.includes('.why h2{position:static}'));h=h.replace('.why h2{position:static}','');h=h.replace('</style>',`/* Keep Why section title and description pinned while its results scroll */
+@media(min-width:651px){.why .why-layout{align-items:start}.why .why-layout>div:first-child{position:sticky;top:104px;align-self:start}.why h2{position:static;margin-top:0}}
+@media(max-width:650px){.why .why-layout>div:first-child{position:static}.why h2{position:static}}
+</style>`);fs.writeFileSync(f,h);console.log('Restored desktop sticky heading group with clearance below compact header.');
