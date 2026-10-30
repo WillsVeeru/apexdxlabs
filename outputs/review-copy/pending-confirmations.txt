@@ -1,0 +1,9 @@
+Still awaiting Apex DX Labs confirmation:
+- Respiratory panel organisms / targets.
+- Turnaround times for each assay.
+- Approved collection containers, specimen amounts, labeling, storage, and transport instructions.
+- Available courier, portal, and connectivity services.
+- Policy effective dates, last-updated dates, and designated privacy contact/email.
+- Direct form submission backend or form service. Current form prepares an email to info@apexdxlabs.com.
+
+Review copy uses specimen types, address and website already supplied by the user. No clinical targets, timings or operational capabilities have been invented. Main website unchanged.

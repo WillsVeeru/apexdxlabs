@@ -1,0 +1,1 @@
+const fs=require('fs');for(const name of ['privacy-policy','hipaa-notice','terms-of-use']){const h=fs.readFileSync('outputs/'+name+'.html','utf8');const a=h.match(/<article class="legal-document">[\s\S]*?<\/article>/)[0];console.log(name, [...a.matchAll(/<p>[^<]*(?:Email:|Mailing Address:|Phone:)[^<]*<\/p>/g)].map(m=>m[0]).join('\n'));}

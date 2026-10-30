@@ -1,0 +1,1 @@
+const fs=require('fs');let h=fs.readFileSync('outputs/review-copy/index.html','utf8');console.log([...new Set(h.match(/[^<>]{0,70}(?:\[Confirm[^\]]*\]|To be confirmed|Panel list to be confirmed|Specimen: Confirm)[^<>]{0,100}/g)||[])].join('\n'));console.log(h.match(/<form[\s\S]*?<\/form>/)?.[0]);
